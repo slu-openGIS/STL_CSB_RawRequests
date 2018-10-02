@@ -1,4 +1,4 @@
-# Build CSB raw data 
+# Build CSB raw data
 
 ## Introduction
 ## This script creates the data file STL_CSB_RawRequests. See README.md for details.
@@ -9,9 +9,17 @@ library(readr)
 
 ## set source variables
 url <- "https://www.stlouis-mo.gov/data/upload/data-files/csb.zip"
-path1 <- "/csb/requests-2010-12-31.csv"
-path2 <- "/csb/requests-2015-12-31.csv"
-path3 <- "/csb/requests-2018-02-07.csv"
+path1 <- "/2008.csv"
+path2 <- "/2009.csv"
+path3 <- "/2010.csv"
+path4 <- "/2011.csv"
+path5 <- "/2012.csv"
+path6 <- "/2013.csv"
+path7 <- "/2014.csv"
+path8 <- "/2015.csv"
+path9 <- "/2016.csv"
+path10 <- "/2017.csv"
+path11 <- "/2018.csv"
 
 ## create temporary directory, download and unzip data
 tmpdir <- tempdir()
@@ -19,55 +27,173 @@ utils::download.file(url, paste0(tmpdir,"csb.zip"))
 utils::unzip(paste0(tmpdir,"csb.zip"), exdir = tmpdir)
 
 ## read in data
-data1 <- read_csv(
-  paste0(tmpdir,path1), 
-  col_types = cols(
-    PROBZIP = col_integer(),
-    DATETIMEINIT = col_character(),
-    DATETIMECLOSED = col_character(),
-    SRX = col_double(),
-    SRY = col_double(),
-    PRJCOMPLETEDATE = col_character(),
-    DATECANCELLED = col_character(),
-    DATEINVTDONE = col_character(),
-    NEIGHBORHOOD = col_integer(),
-    WARD = col_integer()
-  ))
-data2 <- read_csv(
-  paste0(tmpdir,path2), 
-  col_types = cols(
-    PROBZIP = col_integer(),
-    DATETIMEINIT = col_character(),
-    DATETIMECLOSED = col_character(),
-    SRX = col_double(),
-    SRY = col_double(),
-    PRJCOMPLETEDATE = col_character(),
-    DATECANCELLED = col_character(),
-    DATEINVTDONE = col_character(),
-    NEIGHBORHOOD = col_integer(),
-    WARD = col_integer()
-  ))
-data3 <- read_csv(
-  paste0(tmpdir,path3), 
-  col_types = cols(
-    PROBZIP = col_integer(),
-    DATETIMEINIT = col_character(),
-    DATETIMECLOSED = col_character(),
-    SRX = col_double(),
-    SRY = col_double(),
-    PRJCOMPLETEDATE = col_character(),
-    DATECANCELLED = col_character(),
-    DATEINVTDONE = col_character(),
-    NEIGHBORHOOD = col_integer(),
-    WARD = col_integer()
-  ))
 
-## remove temp directory
+## NOTE FOR DOCUMENTATION
+## 2008 Data is only for traffic and street requests. (From README file of download)
+y2008 <- read_csv(
+paste0(tmpdir,path1),
+col_types = cols(
+PROBZIP = col_integer(),
+DATETIMEINIT = col_character(),
+DATETIMECLOSED = col_character(),
+SRX = col_double(),
+SRY = col_double(),
+PRJCOMPLETEDATE = col_character(),
+DATECANCELLED = col_character(),
+DATEINVTDONE = col_character(),
+NEIGHBORHOOD = col_integer(),
+WARD = col_integer()
+))
+y2009 <- read_csv(
+paste0(tmpdir,path2),
+col_types = cols(
+PROBZIP = col_integer(),
+DATETIMEINIT = col_character(),
+DATETIMECLOSED = col_character(),
+SRX = col_double(),
+SRY = col_double(),
+PRJCOMPLETEDATE = col_character(),
+DATECANCELLED = col_character(),
+DATEINVTDONE = col_character(),
+NEIGHBORHOOD = col_integer(),
+WARD = col_integer()
+))
+y2010 <- read_csv(
+paste0(tmpdir,path3),
+col_types = cols(
+PROBZIP = col_integer(),
+DATETIMEINIT = col_character(),
+DATETIMECLOSED = col_character(),
+SRX = col_double(),
+SRY = col_double(),
+PRJCOMPLETEDATE = col_character(),
+DATECANCELLED = col_character(),
+DATEINVTDONE = col_character(),
+NEIGHBORHOOD = col_integer(),
+WARD = col_integer()
+))
+y2011 <- read_csv(
+paste0(tmpdir,path4),
+col_types = cols(
+PROBZIP = col_integer(),
+DATETIMEINIT = col_character(),
+DATETIMECLOSED = col_character(),
+SRX = col_double(),
+SRY = col_double(),
+PRJCOMPLETEDATE = col_character(),
+DATECANCELLED = col_character(),
+DATEINVTDONE = col_character(),
+NEIGHBORHOOD = col_integer(),
+WARD = col_integer()
+))
+y2012 <- read_csv(
+paste0(tmpdir,path5),
+col_types = cols(
+PROBZIP = col_integer(),
+DATETIMEINIT = col_character(),
+DATETIMECLOSED = col_character(),
+SRX = col_double(),
+SRY = col_double(),
+PRJCOMPLETEDATE = col_character(),
+DATECANCELLED = col_character(),
+DATEINVTDONE = col_character(),
+NEIGHBORHOOD = col_integer(),
+WARD = col_integer()
+))
+y2013 <- read_csv(
+paste0(tmpdir,path6),
+col_types = cols(
+PROBZIP = col_integer(),
+DATETIMEINIT = col_character(),
+DATETIMECLOSED = col_character(),
+SRX = col_double(),
+SRY = col_double(),
+PRJCOMPLETEDATE = col_character(),
+DATECANCELLED = col_character(),
+DATEINVTDONE = col_character(),
+NEIGHBORHOOD = col_integer(),
+WARD = col_integer()
+))
+y2014 <- read_csv(
+paste0(tmpdir,path7),
+col_types = cols(
+PROBZIP = col_integer(),
+DATETIMEINIT = col_character(),
+DATETIMECLOSED = col_character(),
+SRX = col_double(),
+SRY = col_double(),
+PRJCOMPLETEDATE = col_character(),
+DATECANCELLED = col_character(),
+DATEINVTDONE = col_character(),
+NEIGHBORHOOD = col_integer(),
+WARD = col_integer()
+))
+y2015 <- read_csv(
+paste0(tmpdir,path8),
+col_types = cols(
+PROBZIP = col_integer(),
+DATETIMEINIT = col_character(),
+DATETIMECLOSED = col_character(),
+SRX = col_double(),
+SRY = col_double(),
+PRJCOMPLETEDATE = col_character(),
+DATECANCELLED = col_character(),
+DATEINVTDONE = col_character(),
+NEIGHBORHOOD = col_integer(),
+WARD = col_integer()
+))
+y2016 <- read_csv(
+paste0(tmpdir,path9),
+col_types = cols(
+PROBZIP = col_integer(),
+DATETIMEINIT = col_character(),
+DATETIMECLOSED = col_character(),
+SRX = col_double(),
+SRY = col_double(),
+PRJCOMPLETEDATE = col_character(),
+DATECANCELLED = col_character(),
+DATEINVTDONE = col_character(),
+NEIGHBORHOOD = col_integer(),
+WARD = col_integer()
+))
+y2017 <- read_csv(
+paste0(tmpdir,path10),
+col_types = cols(
+PROBZIP = col_integer(),
+DATETIMEINIT = col_character(),
+DATETIMECLOSED = col_character(),
+SRX = col_double(),
+SRY = col_double(),
+PRJCOMPLETEDATE = col_character(),
+DATECANCELLED = col_character(),
+DATEINVTDONE = col_character(),
+NEIGHBORHOOD = col_integer(),
+WARD = col_integer()
+))
+y2018 <- read_csv(
+paste0(tmpdir,path11),
+col_types = cols(
+PROBZIP = col_integer(),
+DATETIMEINIT = col_character(),
+DATETIMECLOSED = col_character(),
+SRX = col_double(),
+SRY = col_double(),
+PRJCOMPLETEDATE = col_character(),
+DATECANCELLED = col_character(),
+DATEINVTDONE = col_character(),
+NEIGHBORHOOD = col_integer(),
+WARD = col_integer()
+))
+
+## remove temp directory and objects
 unlink(tmpdir)
-rm(path1, path2, path3, tmpdir, url)
+rm(path1, path2, path3, path4, path5, path6, path7, path8, path9, path10, path11, url)
 
 ## combine data frames
-STL_CSB_RawRequests <- as_tibble(bind_rows(data1, data2, data3))
+STL_CSB_RawRequests <- as_tibble(bind_rows(y2008, y2009, y2010, y2011, y2012, y2013, y2014, y2015, y2016, y2017, y2018))
 
 ## write data
 save(STL_CSB_RawRequests, file = "data/STL_CSB_RawRequests.rda")
+
+## Note for future implementation: As these data are continuously updated by the city (Lets hope and assume they will maintain this formatting)
+## The function could run as a batch file on a computer and then auto-commit to the repository. The effect is an [almost] always up to date package...
