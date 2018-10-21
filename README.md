@@ -7,6 +7,9 @@
 [![](https://img.shields.io/github/last-commit/slu-openGIS/STL_CSB_RawRequests.svg)](https://github.com/slu-openGIS/STL_CSB_RawRequests/commits/master)
 [![](https://img.shields.io/github/repo-size/slu-openGIS/STL_CSB_RawRequests.svg)](https://github.com/slu-openGIS/STL_CSB_RawRequests/)
 
+### DEPRECATED
+The contents of this repository are outdated and are not being currently maintained. In late 2018, the City of St. Louis switched to a more stable and dependable method for disseminating Citizens' Service Bureau data. In light of this change, we are no longer maintaining our own compliation of those raw data.
+
 ### Abstract
 The City of St. Louis makes their [Citizens Service Bureau data](https://www.stlouis-mo.gov/data/service-requests.cfm) publicly available. These data ship in separate irregularly organized `.csv` files, the most recent of which is renamed with each subsequent release. This lack of stability makes their integration with our [`stlcsb` package](https://github.com/slu-openGIS/stlcsb) challenging. As a workaround, we offer a single unified `.rda` formatted data file specifically to support our package. If you use `R`, we encourage you use access these data via the [`stlcsb` package](https://github.com/slu-openGIS/stlcsb). If you use another tool for data analysis, we encourage you to access these data directly from the [City of St. Louis](https://www.stlouis-mo.gov/data/service-requests.cfm).
 
